@@ -1,0 +1,28 @@
+1.install redis:
+
+docker search  redis
+docker pull redis:latest
+docker images
+docker run -itd --name redis-celery -p 6379:6379 redis
+docker ps
+docker exec -it redis-celery /bin/bash
+
+2.install python3
+
+3.install flower
+
+4.pip3 install -r pip install -r
+
+5.start worker
+
+celery -A celeryapp worker  -l info
+
+celery  flower -A celeryapp worker --address=0.0.0.0 --port=4444 -l info
+
+celery -A celeryschedule worker -B -l info  
+
+celery flower --address=0.0.0.0  -A celeryschedule  worker -l info
+
+6.visit flower web page
+
+http://ip_address:5555
