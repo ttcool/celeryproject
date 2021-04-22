@@ -11,7 +11,7 @@ docker exec -it redis-celery /bin/bash
 
 3.install flower
 
-4.pip3 install -r pip install -r
+4.pip3 install -r requirements.txt
 
 5.start worker
 
@@ -26,3 +26,19 @@ celery flower --address=0.0.0.0  -A celeryschedule  worker -l info
 6.visit flower web page
 
 http://ip_address:5555
+
+7.supervisor config
+
+pip3 install supervisor
+
+echo_supervisord_conf > supervisord.conf
+
+mkdir /etc/supervisor && mv supervisord.conf  /etc/supervisor
+
+supervisord  -c /etc/supervisor/supervisord.conf
+
+supervisotctl update
+
+
+
+ 
