@@ -21,4 +21,4 @@ class ConnectEtcdCluster(object):
                     return con
             raise {'status_code': 0, 'data': "can't connect etcd...."}
         except Exception as e:
-            print({'status_code': 0, 'data': "can't connect etcd...."})
+            raise {'status_code': 0, 'data': "can't connect etcd...."}
